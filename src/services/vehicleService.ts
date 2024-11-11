@@ -1,12 +1,14 @@
-import axios from "axios";
+import axios from 'axios';
 
-export default async function VehicleService() {
+export async function fetchVehicleMakes() {
   try {
     const req = await axios.get(
-      "<https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json>"
+      'https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json'
     );
+    console.log(req.data);
     return req.data;
   } catch (error) {
-    console.log(error);
+    console.log('Error fetching vehicle makes:', error);
+    return null;
   }
 }
