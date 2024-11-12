@@ -9,7 +9,7 @@ export default function Button({ selectedMakeId, selectedYear }: Props) {
     <Link href={`result/${selectedMakeId}/${selectedYear}`} passHref>
       <button
         disabled={!selectedMakeId || !selectedYear}
-        className="p-2 g-[#9a9a9a] rounded-lg hover:bg-[#9a9a9a9a] text-white text-xl font-semibold text-center"
+        className="p-2 w-full bg-[#9a9a9a] rounded-lg hover:bg-[#9a9a9a9a] text-white text-xl font-semibold text-center"
       >
         Next
       </button>
