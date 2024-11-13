@@ -13,7 +13,7 @@ export default function Home() {
         MakeId: maker.MakeId,
         MakeName: maker.MakeName,
       }));
-      console.log(makerData);
+
       setMakers(makerData);
     };
 
