@@ -1,11 +1,10 @@
 export default function Loader() {
   return (
-    <main>
-      <section className="bg-gray-300 w-full h-40 rounded-lg animate-pulse"></section>
-      <h1 className="w-full bg-gray-300 animate-pulse p-2 rounded-lg"></h1>
-      <h1 className="w-full bg-gray-300 animate-pulse p-2 rounded-lg"></h1>
-      <h1 className="w-full bg-gray-300 animate-pulse p-2 rounded-lg"></h1>
-      <h1 className="w-full bg-gray-300 animate-pulse p-2 rounded-lg"></h1>
-    </main>
+    <div className="flex space-x-2 w-full h-full justify-center items-center">
+      <span className="sr-only">Loading...</span>
+      <div className="size-5 bg-black rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+      <div className="size-5 bg-black rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+      <div className="size-5 bg-black rounded-full animate-bounce"></div>
+    </div>
   );
 }
