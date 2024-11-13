@@ -1,17 +1,18 @@
-import IconDownChevron from '@/app/icons/downChevron';
-import IconUpChevron from '@/app/icons/upChevron';
+import IconDownChevron from '@/icons/downChevron';
+import IconUpChevron from '@/icons/upChevron';
 import { useState } from 'react';
 import Button from '../button';
+import { IVehicleForm } from '@/interfaces/vehicleInterface';
 
 type Props = {
-  makers: string[];
+  makers: IVehicleForm[];
 };
 
 export default function VehicleForm({ makers }: Props) {
   const [makerOption, setMakerOption] = useState<boolean>(false);
   const [yearOption, setYearOption] = useState<boolean>(false);
   const [yearSelected, setYearSelected] = useState<number>(0);
-  const [makerSelected, setMakerSelected] = useState<string>('');
+  const [makerSelected, setMakerSelected] = useState<IVehicleForm | null>(null);
 
   const capitalizeFirstLetter = (word: string): string => {
     return word.charAt(0).toLocaleUpperCase() + word.slice(1).toLowerCase();
@@ -21,7 +22,6 @@ export default function VehicleForm({ makers }: Props) {
 
   return (
     <form className="flex mt-6 flex-col gap-6" action="">
-      {/* Car Brand Dropdown */}
       <section className="flex flex-col gap-1">
         <label className="text-white" htmlFor="">
           Select the car brand
@@ -31,7 +31,7 @@ export default function VehicleForm({ makers }: Props) {
             className="rounded-lg px-2 py-1 w-full"
             type="text"
             readOnly
-            value={makerSelected || ''}
+            value={makerSelected ? capitalizeFirstLetter(makerSelected.MakeName) : ''}
             placeholder="Select..."
           />
           <div
@@ -56,13 +56,12 @@ export default function VehicleForm({ makers }: Props) {
                 className=""
                 key={index}
               >
-                {capitalizeFirstLetter(maker)}
+                {capitalizeFirstLetter(maker.MakeName)}
               </span>
             ))}
         </div>
       </section>
 
-      {/* Year Dropdown */}
       <section className="flex flex-col gap-1">
         <label className="text-white" htmlFor="">
           Select the year of manufacture{' '}
@@ -101,7 +100,7 @@ export default function VehicleForm({ makers }: Props) {
           ))}
         </div>
       </section>
-      <Button selectedMakeId={makerSelected} selectedYear={yearSelected} />
+      <Button selectedMakeId={makerSelected?.MakeId || null} selectedYear={yearSelected} />
     </form>
   );
 }
