@@ -1,15 +1,20 @@
 'use client';
 import VehicleForm from '@/components/vechileForm';
+import { IVehicleForm } from '@/interfaces/vehicleInterface';
 import { fetchVehicleMakes } from '@/services/vehicleService';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [maker, setMakers] = useState<string[]>([]);
+  const [maker, setMakers] = useState<IVehicleForm[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchVehicleMakes();
-      const makerNames = data.Results.map((maker: any) => maker.MakeName);
-      setMakers(makerNames);
+      const makerData = data.Results.map((maker: IVehicleForm) => ({
+        MakeId: maker.MakeId,
+        MakeName: maker.MakeName,
+      }));
+      console.log(makerData);
+      setMakers(makerData);
     };
 
     fetchData();
