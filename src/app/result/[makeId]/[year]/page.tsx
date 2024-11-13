@@ -10,7 +10,6 @@ import VehicleCard from '@/components/vehicleCard';
 import IconLeftCheveon from '@/icons/leftChevron';
 import { ResponseGetVehicleModel, VehicleModels } from '@/interfaces/vehicleInterface';
 import { fetchVehicleModelsByIdAndYear } from '@/services/vehicleServices/modelsService';
-import { fetchVehicleDetails } from '@/services/vehicleServices/vehicleDetails';
 import Link from 'next/link';
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 
@@ -42,13 +41,16 @@ export default function ResultPage({ params }: { params: Promise<Params> }) {
   }, []);
 
   return (
-    <div className="bg-zinc-200 vh-[100] max-w-[600px] mx-auto rounded-b-[40px] px-4 pt-4 pb-20 ">
+    <div className=" vh-[100] max-w-[600px] mx-auto rounded-b-[40px] px-4 pt-4 pb-20 ">
       <Link href={'/'}>
         <div className="size-10 hover:bg-slate-600/80 rounded-lg p-2 bg-slate-600/30">
           <IconLeftCheveon />
         </div>
       </Link>
-      <div className="mt-10 mx-auto flex items-center flex-col h-full">
+      <article className="md:text-xl text-md font-semibold text-center mt-8">
+        Showing all {vehicleModel[0] && vehicleModel[0].Make_Name} models from the year {year}
+      </article>
+      <div className="mt-5 mx-auto gap-4 flex items-center flex-col h-full">
         <Suspense fallback={<Loader />}>
           {vehicleModel.map(async (vehicle, index) => (
             <VehicleCard key={index} modelYear={year} modelName={vehicle.Model_Name} />
