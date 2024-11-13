@@ -10,6 +10,7 @@ import VehicleCard from '@/components/vehicleCard';
 import IconLeftCheveon from '@/icons/leftChevron';
 import { ResponseGetVehicleModel, VehicleModels } from '@/interfaces/vehicleInterface';
 import { fetchVehicleModelsByIdAndYear } from '@/services/vehicleServices/modelsService';
+import { fetchVehicleDetails } from '@/services/vehicleServices/vehicleDetails';
 import Link from 'next/link';
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 
@@ -50,7 +51,7 @@ export default function ResultPage({ params }: { params: Promise<Params> }) {
       <div className="mt-10 mx-auto flex items-center flex-col h-full">
         <Suspense fallback={<Loader />}>
           {vehicleModel.map(async (vehicle, index) => (
-            <VehicleCard key={index} modelName={vehicle.Model_Name} />
+            <VehicleCard key={index} modelYear={year} modelName={vehicle.Model_Name} />
           ))}
         </Suspense>
       </div>
