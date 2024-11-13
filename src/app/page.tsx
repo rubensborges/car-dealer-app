@@ -21,10 +21,12 @@ export default function Home() {
   }, []);
   return (
     <main className="h-screen">
-      <section className="rounded-b-[40px] bg-[#181c2a] w-full px-4 pt-4 pb-20">
-        <article className="text-white text-2xl font-semibold">Explore</article>
-        <VehicleForm makers={maker} />
-      </section>
+      <div className="bg-[#181c2a] rounded-b-[40px] px-4 pt-4 pb-20 ">
+        <section className="max-w-[600px] mx-auto ">
+          <article className="text-white text-2xl font-semibold">Explore</article>
+          <VehicleForm makers={maker} />
+        </section>
+      </div>
     </main>
   );
 }
