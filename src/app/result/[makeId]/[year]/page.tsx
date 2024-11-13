@@ -43,14 +43,14 @@ export default function ResultPage({ params }: { params: Promise<Params> }) {
         const details = await Promise.all(detailsPromises);
         setVehicleDetails(details);
         setLoading(false);
-      } catch (err) {
+      } catch {
         setError(true);
         setLoading(false);
       }
     };
 
     fetchAllVehicleDetails();
-  }, []);
+  }, [id, year]);
 
   if (loading) {
     return <Loader />;
