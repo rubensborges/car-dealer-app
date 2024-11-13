@@ -35,8 +35,9 @@ export default function ResultPage({ params }: { params: Promise<Params> }) {
 
         const detailsPromises = req.Results.map(async (vehicle) => {
           const modelName = vehicle.Model_Name;
+          const makeName = vehicle.Make_Name;
           const details = await fetchVehicleDetails(modelName, year);
-          return details ? { ...details, model: modelName } : undefined;
+          return details ? { ...details, model: modelName, make: makeName } : undefined;
         });
 
         const details = await Promise.all(detailsPromises);
