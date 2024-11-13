@@ -1,15 +1,10 @@
-
-Certainly! Below is the entire documentation in markdown format that you can directly copy and paste into the README.md file of your project:
-
-markdown
-Copiar código
 # Front-end JS Engineer Test: Car Dealer App
 
 ## Overview
 
-This repository contains the solution for the Car Dealer App, which allows users to filter vehicles by type and model year. The app is built using Next.js and Tailwind CSS.
+This repository contains the solution for the **Car Dealer App**, which allows users to filter vehicles by type and model year. The app is built using **Next.js** and **Tailwind CSS**.
 
-### Features
+## Features
 
 - **Vehicle Filter Page**: Allows users to select a vehicle make and model year and navigate to a result page.
 - **Result Page**: Displays vehicles based on the selected make and year.
@@ -19,63 +14,58 @@ This repository contains the solution for the Car Dealer App, which allows users
 
 ### 1. Clone the Repository
 
+Run the following command to clone the repository:
+
+```bash
 git clone https://github.com/rubensborges/car-dealer-app.git
 cd car-dealer-app
-2. Install Dependencies
+```
+### 2. Install Dependencies
+
 Run the following command to install all necessary dependencies:
-
+```bash
 npm install
-3. Environment Variables
-Create a .env.local file in the root directory with the following variables:
+```
 
-env
-Copiar código
-NEXT_PUBLIC_VEHICLE_MAKES_API=https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json
-NEXT_PUBLIC_VEHICLE_MODELS_API=https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json
-NEXT_PUBLIC_TAILWIND_MODE=production
-NEXT_PUBLIC_VEHICLE_MAKES_API: The API endpoint to fetch vehicle makes for filtering.
-NEXT_PUBLIC_VEHICLE_MODELS_API: The API endpoint to fetch models based on the make and model year.
-NEXT_PUBLIC_TAILWIND_MODE: Optional. Used to control the Tailwind CSS production mode.
-4. Run the Application
+### 3. Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+NEXT_PUBLIC_VEHICLE_MAKES_API=https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json NEXT_PUBLIC_VEHICLE_MODELS_API=https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json 
+
+
+- **NEXT_PUBLIC_VEHICLE_MAKES_API**: The API endpoint to fetch vehicle makes for filtering.
+- **NEXT_PUBLIC_VEHICLE_MODELS_API**: The API endpoint to fetch models based on the make and model year.
+- **NEXT_PUBLIC_TAILWIND_MODE**: Optional. Used to control the Tailwind CSS production mode.
+
+### 4. Run the Application
+
 Start the development server:
 
+```bash
 npm run dev
-This will start the app at http://localhost:3000. You can access the vehicle filter and results pages.
+```
 
-5. Build the Application
-To build the application for production:
+This will start the app at `http://localhost:3000`. You can access the vehicle filter and results pages.
 
-npm run build
-This will create an optimized build of the application in the .next folder.
 
-6. ESLint and Prettier
-This project uses ESLint and Prettier to maintain code quality and consistency. You can run the following commands to check and fix any issues:
+## API Endpoints
 
-npm run lint    # Run ESLint
-npm run format  # Run Prettier
-7. Tailwind CSS Setup
-The project is styled using Tailwind CSS. To customize or extend the default Tailwind configuration, modify the tailwind.config.js file.
+- **Vehicle Makes**: `https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json`  
+  Fetches vehicle makes for the car type.
+  
+- **Vehicle Models**: `https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json`  
+  Fetches vehicle models based on the make ID and model year.
 
-Folder Structure
-/pages
-    /index.js       # Vehicle Filter Page
-    /result/[makeId]/[year].js   # Result Page
-/components
-    FilterSelector.js   # Dropdown selectors for vehicle make and model year
-    VehicleList.js      # Display list of vehicles
-/utils
-    api.js      # API utility functions for fetching vehicle data
-API Endpoints
-Vehicle Makes: https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json
-Fetches vehicle makes for the car type.
-Vehicle Models: https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json
-Fetches vehicle models based on the make ID and model year.
-React Suspense
-The app uses the React Suspense component to manage loading states. It is used both for fetching vehicle data and rendering UI components.
+## React Suspense
 
-Tailwind CSS
-Tailwind CSS is used for styling, and the app is designed to be fully responsive. Custom styles can be added in the tailwind.config.js file if needed.
+The app uses the **React Suspense** component to manage loading states. It is used both for fetching vehicle data and rendering UI components.
 
-License
+## Tailwind CSS
+
+**Tailwind CSS** is used for styling, and the app is designed to be fully responsive. Custom styles can be added in the `tailwind.config.js` file if needed.
+
+## License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
