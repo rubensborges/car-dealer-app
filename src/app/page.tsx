@@ -1,7 +1,7 @@
 'use client';
 import VehicleForm from '@/components/vechileForm';
 import { IVehicleForm } from '@/interfaces/vehicleInterface';
-import { fetchVehicleMakes } from '@/services/vehicleService';
+import { fetchVehicleMakes } from '@/services/vehicleServices/makersService';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
