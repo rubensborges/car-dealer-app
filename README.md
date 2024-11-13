@@ -4,19 +4,17 @@
 
 This repository contains the solution for the **Car Dealer App**, which allows users to filter vehicles by type and model year. The app is built using **Next.js** and **Tailwind CSS**.
 
-<img width="280" alt="Captura de Tela 2024-11-13 às 17 51 05" src="https://github.com/user-attachments/assets/de3651a9-526f-4c78-8a45-cfcd4f0c444f">
+<img width="300" alt="Captura de Tela 2024-11-13 às 17 51 05" src="https://github.com/user-attachments/assets/de3651a9-526f-4c78-8a45-cfcd4f0c444f">
 
-<img width="280" alt="Captura de Tela 2024-11-13 às 17 51 22" src="https://github.com/user-attachments/assets/58dfce87-65ed-4602-9daf-439f30df3ae2">
+<img width="300" alt="Captura de Tela 2024-11-13 às 17 51 22" src="https://github.com/user-attachments/assets/58dfce87-65ed-4602-9daf-439f30df3ae2">
 
-<img width="280" alt="Captura de Tela 2024-11-13 às 17 51 35" src="https://github.com/user-attachments/assets/b21f70ad-a1bd-4207-9a9d-214ac415d390">
+<img width="300" alt="Captura de Tela 2024-11-13 às 17 51 35" src="https://github.com/user-attachments/assets/b21f70ad-a1bd-4207-9a9d-214ac415d390">
 
-<img width="280" alt="Captura de Tela 2024-11-13 às 17 51 46" src="https://github.com/user-attachments/assets/5b29b675-7bba-4200-a9d5-956cbfef0ee8">
+<img width="300" alt="Captura de Tela 2024-11-13 às 17 51 46" src="https://github.com/user-attachments/assets/5b29b675-7bba-4200-a9d5-956cbfef0ee8">
 
-<img width="376" alt="Captura de Tela 2024-11-13 às 19 12 33" src="https://github.com/user-attachments/assets/0767e4a2-1fc8-4d3d-9ee0-cb892fff3b28">
+<img width="300" alt="Captura de Tela 2024-11-13 às 19 12 33" src="https://github.com/user-attachments/assets/0767e4a2-1fc8-4d3d-9ee0-cb892fff3b28">
 
-
-
-## Features
+## Features>
 
 - **Vehicle Filter Page**: Allows users to select a vehicle make and model year and navigate to a result page.
 - **Result Page**: Displays vehicles based on the selected make and year.
