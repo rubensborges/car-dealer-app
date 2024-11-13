@@ -4,7 +4,7 @@
 
 This repository contains the solution for the **Car Dealer App**, which allows users to filter vehicles by type and model year. The app is built using **Next.js** and **Tailwind CSS**.
 
-![image](<img width="380" alt="Captura de Tela 2024-11-13 às 17 51 05" src="https://github.com/user-attachments/assets/a1940e52-7bc1-4d94-b5ed-1599ce58983b">)
+<img width="380" alt="Captura de Tela 2024-11-13 às 17 51 05" src="https://github.com/user-attachments/assets/de3651a9-526f-4c78-8a45-cfcd4f0c444f">
 
 
 ## Features
