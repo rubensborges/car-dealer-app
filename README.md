@@ -12,6 +12,8 @@ This repository contains the solution for the **Car Dealer App**, which allows u
 
 <img width="280" alt="Captura de Tela 2024-11-13 às 17 51 46" src="https://github.com/user-attachments/assets/5b29b675-7bba-4200-a9d5-956cbfef0ee8">
 
+<img width="376" alt="Captura de Tela 2024-11-13 às 19 12 33" src="https://github.com/user-attachments/assets/0767e4a2-1fc8-4d3d-9ee0-cb892fff3b28">
+
 
 
 ## Features
