@@ -42,7 +42,7 @@ export default function VehicleForm({ makers }: Props) {
           </div>
         </div>
         <div
-          className={`overflow-auto flex flex-col gap-2 bg-white text-black px-2 py-1 rounded-lg text-md leading-8 transition-all duration-300 ease-in-out ${
+          className={`overflow-auto flex flex-col gap-2 rounded-lg bg-white text-black px-2 py-1 text-md leading-8 transition-all duration-300 ease-in-out ${
             makerOption ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
@@ -53,7 +53,7 @@ export default function VehicleForm({ makers }: Props) {
                   setMakerSelected(maker);
                   setMakerOption(!makerOption);
                 }}
-                className=""
+                className="hover:bg-zinc-200 cursor-pointer w-full px-2 py-1"
                 key={index}
               >
                 {capitalizeFirstLetter(maker.MakeName)}
