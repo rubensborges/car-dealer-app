@@ -5,14 +5,16 @@ export async function fetchVehicleDetails(
   year: number | undefined | string
 ) {
   const API_KEY = 'wZ3zgHoSA/bMHQreqMVbpw==wvc2MUBdgVWguRlB';
-  const req = await axios.get(
-    `https://api.api-ninjas.com/v1/cars?&model=${name}&limit=1&year=${year}`,
-    {
-      headers: {
-        'X-Api-Key': API_KEY,
-      },
-    }
-  );
+
+  const url = process.env
+    .NEXT_PUBLIC_VEHICLE_DETAILS_API!.replace('{name}', name || '')
+    .replace('{year}', year?.toString() || '');
+
+  const req = await axios.get(url, {
+    headers: {
+      'X-Api-Key': API_KEY,
+    },
+  });
 
   return req.data[0];
 }
