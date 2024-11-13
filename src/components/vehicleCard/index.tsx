@@ -13,7 +13,7 @@ type Props = {
   carDetails?: VehicleDetails;
 };
 
-export default function VehicleCard({ modelName, modelYear, carDetails }: Props) {
+export default function VehicleCard({ modelName, carDetails }: Props) {
   return (
     <>
       {carDetails && (
