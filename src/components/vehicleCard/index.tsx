@@ -4,6 +4,7 @@ import IconFuel from '@/icons/fuel';
 import IconGear from '@/icons/gear';
 import IconTire from '@/icons/tire';
 import { VehicleDetails } from '@/interfaces/vehicleInterface';
+import capitalizeFirstLetter from '@/utils/capitalizeFirstLetter';
 import formatText from '@/utils/formatText';
 
 type Props = {
@@ -47,7 +48,7 @@ export default function VehicleCard({ modelName, modelYear, carDetails }: Props)
                   <div className="size-6">
                     <IconFuel />
                   </div>
-                  <article>{carDetails.fuel_type}</article>
+                  <article>{capitalizeFirstLetter(carDetails.fuel_type)}</article>
                 </div>
               )}
               {carDetails?.class && (
@@ -55,7 +56,7 @@ export default function VehicleCard({ modelName, modelYear, carDetails }: Props)
                   <div className="size-6 mt-1">
                     <IconCar />
                   </div>
-                  <article>{carDetails.class}</article>
+                  <article>{capitalizeFirstLetter(carDetails.class)}</article>
                 </div>
               )}
             </section>
