@@ -4,11 +4,13 @@ type Params = {
   makeId: string | number;
 };
 
-import { ResponseGetVehicleModel } from '@/interfaces/vehicleInterface';
+import { ResponseGetVehicleModel, VehicleModels } from '@/interfaces/vehicleInterface';
 import { fetchVehicleModelsByIdAndYear } from '@/services/vehicleServices/modelsService';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function ResultPage({ params }: { params: Promise<Params> }) {
+  const [vehicleModel, setVehicleModel] = useState<VehicleModels[]>([]);
+
   const resolvedParams = React.use(params);
 
   const year = resolvedParams.year;
@@ -16,7 +18,7 @@ export default function ResultPage({ params }: { params: Promise<Params> }) {
   useEffect(() => {
     const fetchData = async () => {
       const req: ResponseGetVehicleModel = await fetchVehicleModelsByIdAndYear(id, year);
-      console.log(req.Results);
+      setVehicleModel(req.Results);
     };
     fetchData();
   }, []);
@@ -25,7 +27,9 @@ export default function ResultPage({ params }: { params: Promise<Params> }) {
 
   return (
     <div>
-      Year: {year}, ID: {id}
+      {vehicleModel.map((e, index) => (
+        <div key={index}>{e.Model_Name}</div>
+      ))}
     </div>
   );
 }
