@@ -13,3 +13,18 @@ export interface VehicleModels {
 export interface ResponseGetVehicleModel {
   Results: VehicleModels[];
 }
+
+export interface VehicleDetails {
+  city_mpg: number;
+  class: string;
+  combination_mpg: number;
+  cylinders: number;
+  displacement: number;
+  drive: 'rwd' | 'fwd' | 'awd';
+  fuel_type: 'gas' | 'diesel' | 'electric' | 'hybrid';
+  highway_mpg: number;
+  make: string;
+  model: string;
+  transmission: 'a' | 'm';
+  year: number;
+}
