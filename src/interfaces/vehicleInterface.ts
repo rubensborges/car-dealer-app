@@ -27,4 +27,5 @@ export interface VehicleDetails {
   model: string;
   transmission: string;
   year: number;
+  details?: boolean;
 }

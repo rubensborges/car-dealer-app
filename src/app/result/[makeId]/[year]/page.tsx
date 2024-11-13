@@ -39,7 +39,7 @@ export default function ResultPage({ params }: { params: Promise<Params> }) {
           const details = await fetchVehicleDetails(modelName, year);
           return details
             ? { ...details, model: modelName, make: makeName }
-            : { model: modelName, make: makeName };
+            : { model: modelName, make: makeName, details: false };
         });
 
         const details = await Promise.all(detailsPromises);

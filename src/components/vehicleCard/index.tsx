@@ -1,5 +1,6 @@
 import IconCar from '@/icons/car';
 import IconEngine from '@/icons/engine';
+import IconExclamation from '@/icons/exclamation';
 import IconFuel from '@/icons/fuel';
 import IconGear from '@/icons/gear';
 import IconTire from '@/icons/tire';
@@ -22,6 +23,14 @@ export default function VehicleCard({ modelName, carDetails }: Props) {
           <section>
             <article className="text-xl font-semibold text-zinc-900">{modelName}</article>
             <section className="flex flex-col gap-4 mt-6">
+              {!carDetails.details && (
+                <div className="flex items-center gap-1">
+                  <div className="size-6">
+                    <IconExclamation />
+                  </div>
+                  <article>Information not founded</article>
+                </div>
+              )}
               {carDetails.drive && (
                 <div className="flex items-center gap-1">
                   <div className="size-6">
