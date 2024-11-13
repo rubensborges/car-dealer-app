@@ -1,32 +1,67 @@
-import { fetchVehicleDetails } from '@/services/vehicleServices/vehicleDetails';
-import { useEffect, useState } from 'react';
+import IconCar from '@/icons/car';
+import IconEngine from '@/icons/engine';
+import IconFuel from '@/icons/fuel';
+import IconGear from '@/icons/gear';
+import IconTire from '@/icons/tire';
+import { VehicleDetails } from '@/interfaces/vehicleInterface';
+import formatText from '@/utils/formatText';
 
 type Props = {
-  modelName: string;
+  modelName: string | undefined;
   modelYear: number | string | undefined;
-  price?: string;
+  carDetails?: VehicleDetails;
 };
-export default function VehicleCard({ modelName, modelYear, price }: Props) {
-  const [carDetails, setCarDetails] = useState();
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const req = await fetchVehicleDetails(modelName, modelYear);
-        console.log(req);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
-  }, []);
+
+export default function VehicleCard({ modelName, modelYear, carDetails }: Props) {
   return (
-    <main className="">
-      <section></section>
-      <section>
-        <article>{modelName}</article>
-        <article>{modelYear}</article>
-        <article>{price}</article>
-      </section>
-    </main>
+    <>
+      {carDetails && (
+        <main className="bg-white rounded-xl shadow-md p-4 w-full">
+          <section>
+            <article className="text-xl font-semibold text-zinc-900">{modelName}</article>
+            <section className="flex flex-col gap-4 mt-6">
+              <div className="flex items-center gap-1">
+                <div className="size-6">
+                  <IconTire />
+                </div>
+                <article>{formatText(carDetails?.drive)}</article>
+              </div>
+              {carDetails?.transmission && (
+                <div className="flex items-center gap-2">
+                  <div className="size-6">
+                    <IconGear />
+                  </div>
+                  <article>{formatText(carDetails.transmission)}</article>
+                </div>
+              )}
+              {carDetails?.cylinders && (
+                <div className="flex items-center gap-2">
+                  <div className="size-6">
+                    <IconEngine />
+                  </div>
+                  <article>{carDetails.cylinders}</article>
+                </div>
+              )}
+              {carDetails?.fuel_type && (
+                <div className="flex items-center gap-2">
+                  <div className="size-6">
+                    <IconFuel />
+                  </div>
+                  <article>{carDetails.fuel_type}</article>
+                </div>
+              )}
+              {carDetails?.class && (
+                <div className="flex items-center gap-2">
+                  <div className="size-6 mt-1">
+                    <IconCar />
+                  </div>
+                  <article>{carDetails.class}</article>
+                </div>
+              )}
+            </section>
+          </section>
+        </main>
+      )}
+    </>
   );
 }
