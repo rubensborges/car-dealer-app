@@ -14,6 +14,7 @@ type Props = {
 };
 
 export default function VehicleCard({ modelName, carDetails }: Props) {
+  console.log(carDetails);
   return (
     <>
       {carDetails && (
@@ -21,12 +22,14 @@ export default function VehicleCard({ modelName, carDetails }: Props) {
           <section>
             <article className="text-xl font-semibold text-zinc-900">{modelName}</article>
             <section className="flex flex-col gap-4 mt-6">
-              <div className="flex items-center gap-1">
-                <div className="size-6">
-                  <IconTire />
+              {carDetails.drive && (
+                <div className="flex items-center gap-1">
+                  <div className="size-6">
+                    <IconTire />
+                  </div>
+                  <article>{formatText(carDetails?.drive)}</article>
                 </div>
-                <article>{formatText(carDetails?.drive)}</article>
-              </div>
+              )}
               {carDetails?.transmission && (
                 <div className="flex items-center gap-2">
                   <div className="size-6">

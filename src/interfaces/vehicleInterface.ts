@@ -20,11 +20,11 @@ export interface VehicleDetails {
   combination_mpg: number;
   cylinders: number;
   displacement: number;
-  drive: 'rwd' | 'fwd' | 'awd';
-  fuel_type: 'gas' | 'diesel' | 'electric' | 'hybrid';
+  drive: string;
+  fuel_type: string;
   highway_mpg: number;
   make: string;
   model: string;
-  transmission: 'a' | 'm';
+  transmission: string;
   year: number;
 }
