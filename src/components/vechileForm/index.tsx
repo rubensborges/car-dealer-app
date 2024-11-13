@@ -3,6 +3,7 @@ import IconUpChevron from '@/icons/upChevron';
 import { useState } from 'react';
 import Button from '../button';
 import { IVehicleForm } from '@/interfaces/vehicleInterface';
+import capitalizeFirstLetter from '@/utils/capitalizeFirstLetter';
 
 type Props = {
   makers: IVehicleForm[];
@@ -13,10 +14,6 @@ export default function VehicleForm({ makers }: Props) {
   const [yearOption, setYearOption] = useState<boolean>(false);
   const [yearSelected, setYearSelected] = useState<number>(0);
   const [makerSelected, setMakerSelected] = useState<IVehicleForm | null>(null);
-
-  const capitalizeFirstLetter = (word: string): string => {
-    return word.charAt(0).toLocaleUpperCase() + word.slice(1).toLowerCase();
-  };
 
   const currentYear = new Date().getFullYear();
 
