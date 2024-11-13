@@ -7,7 +7,7 @@ import { ResponseGetVehicleModel, VehicleDetails } from '@/interfaces/vehicleInt
 import { fetchVehicleModelsByIdAndYear } from '@/services/vehicleServices/modelsService';
 import { fetchVehicleDetails } from '@/services/vehicleServices/vehicleDetails';
 import Link from 'next/link';
-import React, { lazy, Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 
 type Params = {
   year: string | number;
