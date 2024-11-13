@@ -4,9 +4,10 @@ type Params = {
   makeId: string | number;
 };
 
+import Loader from '@/components/loader';
 import { ResponseGetVehicleModel, VehicleModels } from '@/interfaces/vehicleInterface';
 import { fetchVehicleModelsByIdAndYear } from '@/services/vehicleServices/modelsService';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 
 export default function ResultPage({ params }: { params: Promise<Params> }) {
   const [vehicleModel, setVehicleModel] = useState<VehicleModels[]>([]);
@@ -23,12 +24,12 @@ export default function ResultPage({ params }: { params: Promise<Params> }) {
     fetchData();
   }, []);
 
-  console.log(year, id);
-
   return (
     <div>
-      {vehicleModel.map((e, index) => (
-        <div key={index}>{e.Model_Name}</div>
+      {vehicleModel.map((vehicle, index) => (
+        <Suspense key={index} fallback={<Loader />}>
+          <div key={index}>{vehicle.Model_Name}</div>
+        </Suspense>
       ))}
     </div>
   );
