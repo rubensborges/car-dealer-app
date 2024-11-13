@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 type Props = {
-  selectedMakeId: string | null;
+  selectedMakeId: number | null;
   selectedYear: number | null;
 };
 export default function Button({ selectedMakeId, selectedYear }: Props) {
