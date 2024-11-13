@@ -3,7 +3,7 @@ export interface IVehicleForm {
   MakeName: string;
 }
 
-interface VehicleModels {
+export interface VehicleModels {
   Make_ID: number;
   Make_Name: string;
   Model_ID: number;
